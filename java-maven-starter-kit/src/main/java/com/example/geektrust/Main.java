@@ -7,29 +7,21 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello World");
-        // Sample code to read from file passed as command line argument
         // try {
-        //     // TRAIN_A  ENGINE NDL NDL KRN GHY SLM NJP NGP BLR 
-        //     // TRAIN_B  ENGINE NJP GHY AGA PNE MAO BPL PTA 
-        //     // the file to be opened for reading
+     
         //     FileInputStream fis = new FileInputStream(args[0]);
         //     Scanner sc = new Scanner(fis); // file to be scanned
             
-        //     // String trainA_input = sc.nextLine();
-        //     // String trainB_input = sc.nextLine();
-        //     String trainA_input = "TRAIN_A  ENGINE NDL NDL KRN GHY SLM NJP NGP BLR";
-        //     String trainB_input = "TRAIN_B  ENGINE NJP GHY AGA PNE MAO BPL PTA";
+        //     String trainA_input = sc.nextLine();
+        //     String trainB_input = sc.nextLine();
 
         //     Train trainA = new Train(trainA_input);
         //     Train trainB = new Train(trainB_input);
 
-        //     // System.out.println(train1.toString());
-        //     // System.out.println(train2.toString());
-
         //     RouteService route = new RouteService();
 
-        //     route.updatedTrain(trainA);
-        //     route.updatedTrain(trainB);
+        //     trainA = new Train(route.updatedTrain(trainA));
+        //     trainB = new Train(route.updatedTrain(trainB));
 
         //     System.out.println(trainA.toString());
         //     System.out.println(trainB.toString());
@@ -39,6 +31,8 @@ public class Main {
         // } catch (IOException e) {
 
         // }
+
+
         String trainA_input = "TRAIN_A  ENGINE NDL NDL KRN GHY SLM NJP NGP BLR";
         String trainB_input = "TRAIN_B  ENGINE NJP GHY AGA PNE MAO BPL PTA";
         // String trainA_input = "TRAIN_A ENGINE NGP ITJ BPL AGA NDL  CHN SLM BLR KRN HYB ";

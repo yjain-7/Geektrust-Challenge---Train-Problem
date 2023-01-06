@@ -5,11 +5,10 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 public class Sorting {
-  private Map<String, Integer> routeA;
-  private Map<String, Integer> routeB;
+  private HashMap<String, Integer> routeA;
+  private HashMap<String, Integer> routeB;
 
   public Sorting() {
     routeA = new HashMap<>();
@@ -40,25 +39,30 @@ public class Sorting {
     routeB.put("GHY", 4700);
   }
 
-  public ArrayList<String> sortArrayByHashmap(ArrayList<String> arr) {
-    Map<String, Integer> hmap;
-    boolean flag = true;
-    if (arr.get(0).equals("TRAIN_A")) {
-      hmap = routeA;
-    } else {
-      hmap = routeB;
-      flag = false;
+
+  public ArrayList<String> sorArrayListbyHashmap(List<String> list){
+    List<String> subList1 = list.subList(0, 2);
+    List<String> subList2 = list.subList(3, list.size());
+    HashMap<String, Integer> map;
+    
+    if(list.get(0).equals("TRAIN_A")){
+      map = routeA;
+    }else{
+      map = routeB;
     }
-
-    List<Map.Entry<String, Integer>> list = new ArrayList<>(hmap.entrySet());
-    ArrayList<String> list1 = new ArrayList<>(
-        list.stream().map(Map.Entry::getKey).filter(key -> arr.contains(key)).collect(Collectors.toList()));
-    Collections.reverse(list1);
-    list1.add(0, "ENGINE");
-    String train = (flag) ? "TRAIN_A" : "TRAIN_B";
-    list1.add(0, train);
-
-    return list1;
+    Collections.sort(subList2, (a, b) -> map.get(a) - map.get(b));
+    // Collections.sort(subList2, (a, b) -> Math.abs(map.get(a).compareTo(map.get("HYB"))) - Math.abs(map.get(b).compareTo(map.get("HYB"))));
+    // Collections.sort(subList2, new Comparator<String>() {
+      // @Override
+      // public int compare(String s1, String s2) {
+        // return routeA.get(s1).compareTo(routeA.get(s2));
+      // }
+    // });
+    ArrayList<String> ans_list = new ArrayList<String>();
+    ans_list.addAll(subList1);
+    ans_list.addAll(subList2);
+    return ans_list;
+    
   }
 
   public ArrayList<String> mergeBoogies(Train trainA, Train trainB) {

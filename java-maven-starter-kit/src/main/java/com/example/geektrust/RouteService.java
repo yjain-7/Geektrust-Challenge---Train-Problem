@@ -1,7 +1,6 @@
 package com.example.geektrust;
 
 import java.util.ArrayList;
-// import java.util.Arrays;
 import java.util.Map;
 
 public class RouteService {
@@ -11,8 +10,8 @@ public class RouteService {
 
     public ArrayList<String> updatedTrain(Train train) {
         ArrayList<String> train_list = train.getTrain();
-        train_list = sort.sortArrayByHashmap(train_list);
         train_list = this.removeBoogies(train_list);
+        train_list = sort.sorArrayListbyHashmap(train_list);
         return train_list;
         // train = new Train(train_list);
     }
