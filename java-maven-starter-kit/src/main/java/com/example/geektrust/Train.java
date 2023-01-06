@@ -11,20 +11,20 @@ public class Train {
         train = new ArrayList<>(Arrays.asList(station));
     }
 
-    public Train(ArrayList<String> boogies){
+    public Train(ArrayList<String> boogies) {
         this.train = boogies;
     }
-    
+
     public ArrayList<String> getTrain() {
         return train;
     }
-    
+
     public void setTrain(ArrayList<String> train) {
         this.train = train;
     }
-    
+
     @Override
     public String toString() {
-        return "Train [train=" +(train) + "]";
+        return "Train [train=" + (train) + "]";
     }
 }
